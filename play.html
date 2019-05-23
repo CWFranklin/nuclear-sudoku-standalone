@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <title>Nuclear Sudoku</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="/css/client.css">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<div id="header-left">
+				<h1>Nuclear Sudoku</h1>
+			</div>
+
+			<div id="header-right">
+				<div id="city">Locating satellites...</div>
+				<ul id="lives"></ul>
+			</div>
+		</div>
+
+		<div id="board" class="board">
+			<div class="grid grid-box">
+				<div class="box"><input type="number" id="input1" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input2" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input3" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input4" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input5" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input6" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input7" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input8" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input9" maxlength="1" /></div>
+			</div>
+
+			<div class="grid grid-box">
+				<div class="box"><input type="number" id="input10" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input11" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input12" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input13" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input14" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input15" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input16" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input17" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input18" maxlength="1" /></div>
+			</div>
+
+			<div class="grid grid-box">
+				<div class="box"><input type="number" id="input19" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input20" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input21" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input22" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input23" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input24" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input25" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input26" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input27" maxlength="1" /></div>
+			</div>
+
+			<div class="grid grid-box">
+				<div class="box"><input type="number" id="input28" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input29" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input30" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input31" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input32" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input33" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input34" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input35" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input36" maxlength="1" /></div>
+			</div>
+
+			<div class="grid grid-box">
+				<div class="box"><input type="number" id="input37" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input38" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input39" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input40" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input41" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input42" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input43" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input44" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input45" maxlength="1" /></div>
+			</div>
+
+			<div class="grid grid-box">
+				<div class="box"><input type="number" id="input46" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input47" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input48" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input49" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input50" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input51" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input52" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input53" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input54" maxlength="1" /></div>
+			</div>
+
+			<div class="grid grid-box">
+				<div class="box"><input type="number" id="input55" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input56" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input57" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input58" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input59" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input60" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input61" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input62" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input63" maxlength="1" /></div>
+			</div>
+
+			<div class="grid grid-box">
+				<div class="box"><input type="number" id="input64" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input65" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input66" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input67" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input68" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input69" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input70" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input71" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input72" maxlength="1" /></div>
+			</div>
+
+			<div class="grid grid-box">
+				<div class="box"><input type="number" id="input73" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input74" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input75" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input76" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input77" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input78" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input79" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input80" maxlength="1" /></div>
+				<div class="box"><input type="number" id="input81" maxlength="1" /></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="gameover">
+		<small>Please wait for the next round to begin</small>
+		<div id="startGame" class="hidden">
+			<button>Start Game</button>
+		</div>
+	</div>
+	<div id="messages"></div>
+	<select id="targets" name="targets"></select>
+
+    <script src="/vendor/jquery.min.js"></script>
+    <script src="/js/sudokuGen.js"></script>
+    <script src="/js/client.js"></script>
+</body>
+</html>

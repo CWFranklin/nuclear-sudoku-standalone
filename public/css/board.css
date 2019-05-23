@@ -1,0 +1,201 @@
+html, body {
+    background: #000;
+    color: #0ff;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 20px;
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+#overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #FFF;
+}
+
+@-webkit-keyframes flashpain {
+  0% {
+      box-shadow: inset 0 0 100px -110px #F00;
+  }
+  50% {
+      box-shadow: inset 0 0 100px 10px #F00;
+  }
+  100% {
+      box-shadow: inset 0 0 100px -110px #F00;
+  }
+}
+
+#board {
+    height: 100%;
+}
+
+h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+}
+
+h2 {
+    position: absolute;
+    top: 35px;
+    font-size: 14px;
+    left: 11px;
+}
+
+#map-canvas {
+    height: 100%;
+    width: 100%;
+    background-color: #000 !important;
+}
+
+.label {
+    padding: 0 0.2em 0 0.7em;
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #0FF;
+    color: #F00;
+    -webkit-transform: skew(0deg, -20deg);
+    -webkit-transform-origin: 0 100%;
+    white-space: nowrap;
+    font-size: 14px !important;
+    font-weight: bold !important;
+}
+
+.label:before {
+    display: block;
+    content: "";
+    background: #0ff;
+    width: 5px;
+    position: absolute;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+}
+
+#messages {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 60%;
+    text-align: right;
+    font-size: 2em;
+}
+
+#messages p {
+    margin: 10px 0 0;
+}
+
+#scoreContainer {
+    margin: 90px 40px 30px;
+}
+
+#leaderboard {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #0FF;
+    border-radius: 10px;
+    position: absolute;
+    width: 800px;
+    margin-left: -400px;
+    left: 50%;
+    height: auto;
+    top: 100px;
+}
+
+#timer {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 10px;
+    right: 0;
+    font-size: 3em;
+}
+
+#timer span {
+    background: #0FF;
+    color: #000;
+    font-weight: normal;
+    font-family: "Courier New";
+    font-size: 0.9em;
+    padding: 0 0.2em;
+}
+
+#timer.nearly span {
+    background: #F00;
+}
+
+#scores, #playerList {
+    counter-reset: position;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
+
+#scores .player, #playerList .player {
+    display: block;
+    text-indent: -24px;
+    margin-left: 24px;
+}
+
+#scores .player:before, #playerList .player:before {
+    counter-increment: position;
+    content: counter(position) ". ";
+}
+
+.player.leader:after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 12px;
+    margin-left: 5px;
+    background-image: url('/img/crown.svg');
+    background-repeat: no-repeat;
+}
+
+#players {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    border-top: 1px solid #0ff;
+}
+
+.player {
+    display: inline-block;
+}
+
+.player.dead {
+    color: #F00;
+}
+
+.lives {
+    display: inline;
+    padding: 0 12px 0 4px;
+    list-style-type: none;
+    vertical-align: middle;
+}
+
+.lives li {
+    display: inline-block;
+    background: #0ff;
+    width: 4px;
+    height: 16px;
+    margin-right: 1px;
+}
+
+.lives li.dead {
+    background: red;
+}
+
+#qr {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title>Nuclear Sudoku Board</title>
+    <link rel="stylesheet" type="text/css" href="/css/board.css">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id="board">
+        <div id="map-canvas"></div>
+        <h1>Nuclear Sudoku</h1>
+        <h2>Shall we play a game?</h2>
+    </div>
+    <div id="players"></div>
+    <div id="overlay"></div>
+    <div id="messages"></div>
+    <div id="leaderboard">
+        <div id="timer"></div>
+        <div id="scoreContainer">
+            <div id="scores"></div>
+            <div id="playerList"></div>
+        </div>
+    </div>
+    
+    <img src="https://qrfree.kaywa.com/?l=1&s=8&d=https://sudoku.cwfranklin.com" id="qr" />
+    
+    <audio id="music" preload="auto" loop><source type="audio/wav" src="/sounds/loop.wav"/></audio>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8i75oav1N0WQlnmJPzdp7GfaaQBKoR5w&libraries=geometry&v=3.exp"></script>
+    <script src="/vendor/jquery.min.js"></script>
+    <script src="/vendor/markerwithlabel.min.js"></script>
+    <script src="/js/board.js"></script>
+</body>
+</html>

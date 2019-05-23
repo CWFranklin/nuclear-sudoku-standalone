@@ -1,0 +1,264 @@
+html, body {
+    background: #000;
+    color: #0ff;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 20px;
+    font-family: 'VT323', cursive;
+    text-transform: uppercase;
+}
+
+body {
+    height: calc(100% - 2rem);
+    padding: 1rem 0;
+}
+
+#container {
+    width: 100%;
+    height: calc(100% - 1rem);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#header {
+    height: 5%;
+    min-height: 40px;
+    width: 100%;
+}
+
+#board {
+    width: 100%;
+    max-width: calc(100vh - 100px);
+    position: relative;
+    height: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#header-left {
+    float: left;
+}
+
+#header-right {
+    float: right;
+    padding-top: 5px;
+    margin-right: 4px;
+}
+
+h1 {
+    margin: 0 5px;
+    padding-top: 0;
+}
+
+#city {
+    display: inline;
+    margin: 0 5px;
+}
+
+#lives {
+    display: inline;
+    padding: 0;
+    list-style-type: none;
+    vertical-align: middle;
+}
+
+#lives li {
+    display: inline-block;
+    background: #0ff;
+    width: 4px;
+    height: 16px;
+    margin-right: 1px;
+}
+
+#lives li.dead {
+    background: #F00;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.grid-box {
+    flex: 0 0 calc(33.3333% - 5px);
+    /*width: calc(33.3333% - 4px);*/
+    margin: 2px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1 0 33.3333%;
+    margin: 0;
+    /*background: red;*/
+}
+
+
+
+
+
+
+
+
+
+.board ul {
+    width: 100%;
+    height: 0;
+    margin: auto;
+    padding: 0;
+    padding-bottom: calc(100% - 65px);
+    list-style-position: inside;
+    list-style-type: none;
+    overflow: hidden;
+    -webkit-margin-after: 0;
+    -moz-margin-after: 0;
+    -webkit-margin-start: 0;
+    -moz-margin-start: 0;
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+}
+
+/*.board ul li {
+   width: 98%;
+}*/
+
+.board ul li .grid {
+    width: 33.33333%;
+    overflow: hidden;
+    float: left;
+    height: 33.33333%;
+}
+
+.board ul li .grid ul li .box {
+    width: 33%;
+    float: left;
+    height: 0;
+    padding-bottom: 33.33333%;
+}
+
+#targets {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    font-size: 20px;
+    display: none;
+}
+
+.grid {
+    position: relative;
+}
+
+.grid .launch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #F00;
+    text-align: center;
+    cursor: pointer;
+    border: 5px dashed #F00;
+    margin: 1px 0 0 1px;
+    width: 100%;
+}
+
+.grid.complete input {
+    background: #000;
+    color: #F00;
+    border: 1px solid #F00;
+}
+
+.grid ul li {
+    margin: 0 5px;
+}
+
+.grid input {
+    border: 1px solid #0FF;
+    width: 100%;
+    padding: 0;
+    height: 0;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    background: #000;
+    color: #0FF;
+    font-size: 28pt;
+    text-align: center;
+    font-family: 'VT323', cursive;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+
+.grid input:focus {
+    background: #0FF;
+    color: #000;
+}
+
+.starting {
+    color: #CCC !important;
+    background: #222 !important;
+    opacity: 1 !important;
+}
+
+@media screen and (max-width: 1000px){
+    .grid input {
+        font-size: 28pt;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .grid input {
+        font-size: 26pt;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .grid input {
+        font-size: 22pt;
+    }
+}
+
+#gameover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    color: #F00;
+    font-size: 4em;
+    text-align: center;
+    padding: 0.5em;
+}
+
+#gameover small {
+    display: block;
+    font-size: 0.5em;
+}
+
+#startGame.hidden {
+    display: none;
+}
+
+#startGame button {
+    color: #0ff;
+    border: 1px solid #0ff;
+    background: #000;
+    font-size: 23px;
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
+#startGame button:hover {
+    color: #0bb;
+    border: 1px solid #0bb;
+    cursor: pointer;
+}
